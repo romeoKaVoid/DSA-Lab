@@ -1,0 +1,3 @@
+*.exe
+example.c
+.vscode/
