@@ -7,14 +7,15 @@
 */
 
 #include <stdio.h>
-int gcd(int a, int b) {
-  return (b == 0) ? a : gcd (b, a % b);
+
+size_t factorial(size_t a) {
+  return (a <= 1) ? 1 : a * factorial(a - 1);
 }
 
 int main() {
-  int a, b;
-  printf("Enter any two number: \n");
-  scanf("%d%d", &a, &b);
+  size_t n;
+  printf("Enter any number: ");
+  scanf("%zu", &n);
 
-  printf("gcd of %d and %d is %d\n", a, b, gcd(a, b));
+  printf("Factorial of n = %zu\n", factorial(n));
 }
