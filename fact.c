@@ -1,31 +1,20 @@
+/*
+ *
+ * Optimize suboptimal code
+ *
+ * Optimize: Dont use goto statement
+ *
+*/
+
 #include <stdio.h>
-#include <conio.h>
-long long int fact(int n)
-{
-    if (n == 1 || n == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return n * fact(n - 1);
-    }
+int gcd(int a, int b) {
+  return (b == 0) ? a : gcd (b, a % b);
 }
-int main()
-{
-    int a;
-label:
-    printf("Enter the number you want factorial of: ");
-    scanf("%d", &a);
-    if (a < 0)
-    {
-        printf("Invalid Number!! Factorial of -ve number is not defined!!\n");
-        goto label;
-    }
-    else
-    {
-        printf("The factorial of %d is %lld", a, fact(a));
-    }
-    printf("\n\n\tBy Krishna Aryal");
-    return 0;
+
+int main() {
+  int a, b;
+  printf("Enter any two number: \n");
+  scanf("%d%d", &a, &b);
+
+  printf("gcd of %d and %d is %d\n", a, b, gcd(a, b));
 }
